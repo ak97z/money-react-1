@@ -1,6 +1,7 @@
 import React from 'react';
-import {HashRouter as Router, Link, Redirect, Route, Switch} from 'react-router-dom';
+import {HashRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
 import styled from 'styled-components';
+import Nav from 'components/Nav';
 
 const Wrapper = styled.div`
   border: 1px red solid;
@@ -12,19 +13,6 @@ const Main = styled.div`
   border: green 1px solid;
   flex-grow: 1;
   overflow: auto`;
-const Nav = styled.div`
-  border: blue 1px solid;
-
-  > ul {
-    display: flex;
-
-    > li {
-      width: 33%;
-      text-align: center;
-      padding: 16px;
-    }
-  }
-`;
 
 function App() {
     return (
@@ -46,19 +34,7 @@ function App() {
                     </Route>
 
                 </Switch></Main>
-                <Nav>
-                    <ul>
-                        <li>
-                            <Link to="/money">money-标签</Link>
-                        </li>
-                        <li>
-                            <Link to="/tags">tags-标签</Link>
-                        </li>
-                        <li>
-                            <Link to="/statistics">statistics-标签</Link>
-                        </li>
-                    </ul>
-                </Nav>
+                <Nav/>
 
 
             </Wrapper>
