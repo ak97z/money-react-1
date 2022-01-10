@@ -19,6 +19,7 @@ function App() {
                     </ul>
                 </nav>
                 <Switch>
+                    <Redirect exact from="/" to="/money"/>
                     <Route path="/money">
                         <Money/>
                     </Route>
@@ -28,7 +29,10 @@ function App() {
                     <Route path="/statistics">
                         <Statistics/>
                     </Route>
-                    <Redirect exact from="/" to="/money"/>
+                    <Route path="*">
+                        <NoMatch />
+                    </Route>
+
                 </Switch>
             </div>
         </Router>
@@ -46,5 +50,7 @@ function Statistics() {
 function Tags() {
     return <h2>Tags-页面</h2>;
 }
-
+function NoMatch() {
+    return <h2>404</h2>;
+}
 export default App;
