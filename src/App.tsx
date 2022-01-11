@@ -13,7 +13,7 @@ function App() {
             <Switch>
                 <Redirect exact from="/" to="/money"/>
                 <Route path="/money">
-                    <Money/>123
+                    <Money/>
                 </Route>
                 <Route path="/tags">
                     <Tags/>
