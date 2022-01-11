@@ -9,7 +9,7 @@ const Icon = (props: Props) => {
     return (
         <svg className="icon">
             <use xlinkHref={'#' + props.name}/>
-            <br/>
+
         </svg>
     );
 };
