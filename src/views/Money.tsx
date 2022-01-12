@@ -18,8 +18,6 @@ function Money() {
             <NoteSection/>
             <CategorySection/>
             <NumberPadSection/>
-
-
         </MyLayout>);
 }
 
