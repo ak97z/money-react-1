@@ -18,4 +18,4 @@ const NotesSection = styled.section`
   }
 `;
 
-export default NotesSection
+export {NotesSection}
