@@ -9,7 +9,6 @@ import NoMatch from './views/NoMatch';
 function App() {
     return (
         <Router>
-
             <Switch>
                 <Redirect exact from="/" to="/money"/>
                 <Route path="/money">
@@ -24,7 +23,6 @@ function App() {
                 <Route path="*">
                     <NoMatch/>
                 </Route>
-
             </Switch>
         </Router>
     );
