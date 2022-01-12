@@ -11,16 +11,12 @@ const MyLayout = styled(Layout)`
   flex-direction: column;
 `;
 
-function Money() {
+function Money()    {
     return (
         <MyLayout>
             <TagsSection/>
             <NoteSection/>
             <CategorySection>
-                <ul>
-                    <li className="selected">支出</li>
-                    <li>收入</li>
-                </ul>
             </CategorySection>
             <NumberPadSection>
                 <div className="output">
