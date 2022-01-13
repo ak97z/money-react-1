@@ -22,11 +22,11 @@ type Props = {
     label: string,
 } & React.InputHTMLAttributes<HTMLInputElement>
 const Input: React.FC<Props> = (props) => {
-
+const {label,children,...rest}=props
     return (
         <Label>
             <span>{props.label}</span>
-            <input type="text" placeholder="占位:在这里添加备注."/>
+            <input {...rest}/>
         </Label>
 
     );
