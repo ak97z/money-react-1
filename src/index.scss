@@ -29,7 +29,9 @@ body {
   font-size: 16px;
   line-height: 1.2;
 }
-
+button,input{
+  font: inherit ;
+}
 .icon {
   width: 1em;
   height: 1em;

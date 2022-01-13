@@ -8,7 +8,10 @@ const Wrapper = styled.div`
 `;
 const Main = styled.div`
   flex-grow: 1;
-  overflow: auto`;
+  overflow: auto;
+  background: rgb(245,245,245);
+
+`;
 
 
 const Layout=(props:any)=>{
@@ -21,7 +24,4 @@ const Layout=(props:any)=>{
         </Wrapper>
     )
 }
-
-
-
 export default Layout;
