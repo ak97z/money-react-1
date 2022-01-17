@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
-import {createId} from './lib/createId';
-import {useUpdate} from './hooks/useUpdate';
+import {createId} from '../lib/createId';
+import {useUpdate} from './useUpdate';
 
 const useTags = () => {
         const [tags, setTags] = useState<{ id: number, name: string }[]>([]);
@@ -31,7 +31,7 @@ const useTags = () => {
             return result;
         };
         const updateTag = (id: number, {name}: { name: string }) => {
-            setTags(tags.map(tag => tag.id === id ? {id, name} : tag));
+            setTags(tags.map(tag => tag.id === id ? {id, name: name} : tag));
         };
         // const index = findTagIndex(id);
         // const tagsClone = JSON.parse(JSON.stringify(tags));
@@ -52,15 +52,11 @@ const useTags = () => {
                 setTags([...tags, {id: createId(), name: tagName}]);
             }
         };
-        return {
-            tags: tags,
-            setTags: setTags,
-            findTag: findTag,
-            findTagIndex: findTagIndex,
-            updateTag: updateTag,
-            deleteTag: deleteTag,
-            addTag: addTag,
+        const getName = (id: number) => {
+            const tag = tags.filter(t => t.id === id)[0];
+            return tag ? tag.name : '';
         };
+        return {tags, getName, addTag, setTags, findTag, updateTag, findTagIndex, deleteTag};
     }
 ;
 export {useTags};

@@ -19,7 +19,7 @@ const NoteSection: React.FC<Props> = (props) => {
     const onChange: ChangeEventHandler<HTMLInputElement> = (e) => {
         props.onChange(e.target.value);
     };
-    console.log(note);
+    // console.log(note);
     // @ts-ignore
     return (
         <Wrapper>

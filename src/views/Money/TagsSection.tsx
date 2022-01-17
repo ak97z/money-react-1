@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {useTags} from '../../useTags';
+import {useTags} from '../../hooks/useTags';
 
 
 const Wrapper = styled.section`
@@ -50,7 +50,7 @@ const TagsSection: React.FC<Props> = (props) => {
     const onToggleTag = (tagId: number) => {
         const index = selectedTagIds.indexOf(tagId);
         if (index >= 0) {
-            //如果tag被选中,就复制所有没有被选中的tag,作为新的selectedTag
+            // 如果 tag 已被选中，就复制所有没有被选中的 tag，作为新的 selectedTag
             props.onChange(selectedTagIds.filter(t => t !== tagId));
         } else {
             props.onChange([...selectedTagIds, tagId]);
@@ -67,7 +67,7 @@ const TagsSection: React.FC<Props> = (props) => {
                                          onToggleTag(tag.id);
                                      }}
                                      className={getClass(tag.id)}
-                >{tag.name}</li>)}
+                >{tag.id} : {tag.name}</li>)}
             </ol>
             <button onClick={addTag}>新增标签</button>
         </Wrapper>
